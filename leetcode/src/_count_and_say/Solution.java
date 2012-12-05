@@ -1,4 +1,4 @@
-package count_and_say;
+package _count_and_say;
 
 public class Solution {
     public String countAndSay(int n) {
