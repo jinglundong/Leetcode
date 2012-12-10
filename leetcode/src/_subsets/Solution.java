@@ -25,8 +25,7 @@ public class Solution {
 		}
 		Arrays.sort(S);
 		ArrayList<ArrayList<Integer>> prev = new ArrayList<ArrayList<Integer>>();
-		ArrayList<ArrayList<Integer>> cur = new ArrayList<ArrayList<Integer>>();
-		ArrayList<Integer> first = new ArrayList<Integer>();
+		ArrayList<ArrayList<Integer>> cur = new ArrayList<ArrayList<Integer>>();		
 		prev.add(new ArrayList<Integer>());
 		for (int i = 0; i < S.length; i++) {
 			cur.clear();
@@ -42,6 +41,5 @@ public class Solution {
 			prev = new ArrayList<ArrayList<Integer>>(cur);
 		}
 		return prev;
-
 	}
 }
