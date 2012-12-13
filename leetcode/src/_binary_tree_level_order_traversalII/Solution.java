@@ -1,16 +1,28 @@
-package _binary_tree_level_order_traversal;
+package _binary_tree_level_order_traversalII;
 
 import java.util.ArrayList;
 
+import _binary_tree_level_order_traversal.Solution.TreeNode;
+
 /**
- * Given a binary tree, return the level order traversal of its nodes' values.
- * (ie, from left to right, level by level).
- * 
- * For example: Given binary tree {3,9,20,#,#,15,7}, 3 / \ 9 20 / \ 15 7 return
- * its level order traversal as: [ [3], [9,20], [15,7] ]
- * 
+ * Given a binary tree, return the bottom-up level order traversal of its nodes' values. 
+ * (ie, from left to right, level by level from leaf to root).
+
+    For example:
+    Given binary tree {3,9,20,#,#,15,7},
+        3
+       / \
+      9  20
+        /  \
+       15   7
+    return its bottom-up level order traversal as:
+    [
+      [15,7]
+      [9,20],
+      [3],
+    ]
  * @author jinglun
- * 
+ *
  */
 public class Solution {
     public class TreeNode {
@@ -23,7 +35,7 @@ public class Solution {
         }
     }
 
-    public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
+    public ArrayList<ArrayList<Integer>> levelOrderBottom(TreeNode root) {
         // Start typing your Java solution below
         // DO NOT write main() function
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
@@ -34,10 +46,10 @@ public class Solution {
         prev.add(root);
         ArrayList<TreeNode> cur = new ArrayList<TreeNode>();
         while (!prev.isEmpty()) {
-            result.add(new ArrayList<Integer>());
+            result.add(0, new ArrayList<Integer>());
             cur.clear();
             for (TreeNode it : prev) {
-                result.get(result.size() - 1).add(it.val);
+                result.get(0).add(it.val);
                 if (it.left != null) {
                     cur.add(it.left);
                 }
