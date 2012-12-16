@@ -30,9 +30,9 @@ public class Solution {
 	public TreeNode buildTree(int[] preorder, int[] inorder) {
 		// Start typing your Java solution below
 		// DO NOT write main() function
-		// Map from node value to its array index
 		this.preorder = preorder;
 		this.inorder = inorder;
+		// Map from node value to its array index
 		this.preIndex = new HashMap<Integer, Integer>();
 		this.inIndex = new HashMap<Integer, Integer>();
 		if (preorder == null || preorder.length == 0) {
@@ -46,8 +46,7 @@ public class Solution {
 
 	}
 
-	private TreeNode buildSubTree(int preLeft, int preRight, int inLeft,
-			int inRight) {
+	private TreeNode buildSubTree(int preLeft, int preRight, int inLeft, int inRight) {
 		if (preorder == null || preorder.length == 0) {
 			return null;
 		}
@@ -57,6 +56,7 @@ public class Solution {
 		if (preRight < preLeft) {
 			return null;
 		}
+		//find the left and right child recursively
 		TreeNode root = new TreeNode(preorder[preLeft]);
 		int rootIndex = inIndex.get(preorder[preLeft]);
 		int leftSubtreeSize = rootIndex - inLeft;
