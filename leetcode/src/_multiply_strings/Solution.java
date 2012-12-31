@@ -1,4 +1,4 @@
-package _string_multi;
+package _multiply_strings;
 
 import java.util.LinkedList;
 public class Solution {
