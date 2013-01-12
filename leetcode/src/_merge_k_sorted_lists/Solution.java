@@ -23,12 +23,12 @@ public class Solution {
 	public ListNode mergeKLists(ArrayList<ListNode> lists) {
 		// Start typing your Java solution below
 		// DO NOT write main() function
-		ListNode head = new ListNode(0); // will return head.next
-		ListNode curNode = head; // current ListNode in result list
-		int tmpMin = Integer.MAX_VALUE; // minimum value in lists
+		ListNode head = new ListNode(0); 	// will return head.next
+		ListNode curNode = head; 			// current ListNode in result list
+		int tmpMin = Integer.MAX_VALUE; 	// minimum value in lists
 		ListNode tmpNode = new ListNode(0); // ListNode with minimum val
-		boolean isFinish = false; // true if at least one node is not null
-		int listNum; // the index of which node to be added to result
+		boolean isFinish = false; 			// true if at least one node is not null
+		int listNum; 						// the index of which node to be added to result
 
 		if (lists == null || lists.isEmpty()) {
 			return null;
