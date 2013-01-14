@@ -1,4 +1,4 @@
-package _3SUM;
+package _3_sum;
 
 import static org.junit.Assert.*;
 
