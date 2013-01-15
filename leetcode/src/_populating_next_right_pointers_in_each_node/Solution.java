@@ -17,6 +17,9 @@ import java.util.LinkedList;
  * You may only use constant extra space. You may assume that it is a perfect
  * binary tree (ie, all leaves are at the same level, and every parent has two
  * children).
+ * 
+ * This solution use o(k) extra space, where k is the maximum nodes in all levels
+ * Provide a solution using constant extra space in follow up question.
  */
 public class Solution {
 	public class TreeLinkNode {
