@@ -11,15 +11,6 @@ package _remove_duplicate_from_sorted_listII;
  * 
  */
 public class Solution {
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
 
     public ListNode deleteDuplicates(ListNode head) {
         // Start typing your Java solution below
