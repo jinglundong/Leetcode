@@ -27,38 +27,23 @@ public class Solution {
                 divisor = 0 - divisor;
             }
         }
-        //now both of them are negative
-        //But we still need to deal with Integer.MIN_VALUE
-        if (divisor == Integer.MIN_VALUE){
-            if (dividend == Integer.MIN_VALUE){
-                return 1;
-            }
-            else{
-                return 0;
-            }
-        }
-        if (dividend == Integer.MIN_VALUE){
-            if (negative){
-                return -1 - divide(dividend - divisor, divisor);
-            }
-            return 1 + divide(dividend - divisor, divisor);
-        }
         //Scan from the largest n where divisor^n <= dividend
         //It's a little bit weird because the dividend and divisor are both negative 
         int result = 0;
         int base = 1;
-        while(divisor<<1 >= dividend && divisor<<1 < 0){
+        while(dividend <= divisor<<1 && divisor<<1 < 0){
             divisor = divisor << 1;
             base = base << 1;
         }
-        while(base > 0 ){
+        //the second condition of while loop is used if dividend is Integer.MIN_VALUE
+        while(base > 0 || base == Integer.MIN_VALUE){
             if (dividend <= divisor){
                 dividend -= divisor;
-                result -= base;
+                result += base;
             }
             base = base >> 1;
             divisor = divisor >> 1;
         }
-        return negative? result: 0 - result;
+        return negative? 0- result: result;
     }
 }
