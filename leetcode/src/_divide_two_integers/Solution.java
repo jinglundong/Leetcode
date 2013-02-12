@@ -35,13 +35,12 @@ public class Solution {
             divisor = divisor << 1;
             base = base << 1;
         }
-        //the second condition of while loop is used if dividend is Integer.MIN_VALUE
-        while(base > 0 || base == Integer.MIN_VALUE){
+        while(base != 0){
             if (dividend <= divisor){
                 dividend -= divisor;
                 result += base;
             }
-            base = base >> 1;
+            base = base >>> 1;      //padding 0 to the left most bit
             divisor = divisor >> 1;
         }
         return negative? 0- result: result;
