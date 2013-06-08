@@ -1,4 +1,4 @@
-package _same_tree;
+package _validate_binary_search_tree;
 
 public class TreeNode {
     int val;

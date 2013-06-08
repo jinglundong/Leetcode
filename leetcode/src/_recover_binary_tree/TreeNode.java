@@ -1,4 +1,4 @@
-package _same_tree;
+package _recover_binary_tree;
 
 public class TreeNode {
     int val;
