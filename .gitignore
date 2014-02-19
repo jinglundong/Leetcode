@@ -1,1 +1,3 @@
-/leetcode/bin
+leetcode/bin
+/
+*.class
